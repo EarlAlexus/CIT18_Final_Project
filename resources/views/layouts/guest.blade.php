@@ -1,3 +1,5 @@
+<!-- resources/views/layouts/guest.blade.php -->
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -24,6 +26,9 @@
 
             <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
                 {{ $slot }}
+                <div class="mt-4">
+                    <a href="{{ route('register') }}" class="text-sm text-gray-600 underline">Register</a>
+                </div>
             </div>
         </div>
     </body>

@@ -8,6 +8,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', function () {
+    return redirect('/todos');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -18,6 +22,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // Add the TodoController routes here
+    Route::resource('todos', TodoController::class);
+});
+
+Route::middleware(['auth'])->group(function () {
     Route::resource('todos', TodoController::class);
 });
 
