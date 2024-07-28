@@ -13,15 +13,20 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <form action="{{ route('todos.store') }}" method="POST">
                         @csrf
-                        <div>
-                            <label for="title">Title</label>
-                            <input type="text" name="title" id="title" required>
+                        <div class="mb-4">
+                            <label for="title" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Title</label>
+                            <input type="text" name="title" id="title" required
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:focus:ring-gray-500 dark:focus:border-gray-500">
                         </div>
-                        <div>
-                            <label for="description">Description</label>
-                            <textarea name="description" id="description"></textarea>
+                        <div class="mb-4">
+                            <label for="description" class="block text-sm font-medium text-gray-700 dark:text-gray-200">Description</label>
+                            <textarea name="description" id="description"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:focus:ring-gray-500 dark:focus:border-gray-500"></textarea>
                         </div>
-                        <button type="submit" class="mt-4">Create</button>
+                        <button type="submit"
+                            class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-500">
+                            Create
+                        </button>
                     </form>
                 </div>
             </div>
